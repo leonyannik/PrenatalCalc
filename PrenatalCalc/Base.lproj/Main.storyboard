@@ -872,20 +872,20 @@
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Oligoelementos: " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="8" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8K9-AU-X25">
-                                                                    <rect key="frame" x="8" y="4" width="229" height="70"/>
+                                                                    <rect key="frame" x="8" y="4" width="190" height="70"/>
                                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="30"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="456.2" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="8" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OXU-oU-2dY">
-                                                                    <rect key="frame" x="243" y="4" width="80" height="70"/>
+                                                                    <rect key="frame" x="204" y="4" width="80" height="70"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="80" id="V17-RN-TWC"/>
                                                                     </constraints>
                                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="30"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xl5-ut-8M5">
-                                                                    <rect key="frame" x="327" y="53" width="36" height="17"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Kcal/Kg/día" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xl5-ut-8M5">
+                                                                    <rect key="frame" x="288" y="53" width="75" height="17"/>
                                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -910,8 +910,54 @@
                                                             <outlet property="widthContraint" destination="V17-RN-TWC" id="91b-hm-vV9"/>
                                                         </connections>
                                                     </collectionViewCell>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="notesCell" id="vzv-Je-1Ab" customClass="NotesCollectionViewCell" customModule="PrenatalCalc" customModuleProvider="target">
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="generalCell" id="sqh-1O-h2X" customClass="ValueCollectionViewCell" customModule="PrenatalCalc" customModuleProvider="target">
                                                         <rect key="frame" x="633" y="44" width="367" height="78"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                            <rect key="frame" x="0.0" y="0.0" width="367" height="78"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Oligoelementos: " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="8" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C4w-7q-WLD">
+                                                                    <rect key="frame" x="8" y="4" width="190" height="70"/>
+                                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="30"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="456.2" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="8" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YDd-BB-E30">
+                                                                    <rect key="frame" x="204" y="4" width="80" height="70"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="80" id="TXB-hY-5xp"/>
+                                                                    </constraints>
+                                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="30"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Kcal/Kg/día" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j1b-oW-GG4">
+                                                                    <rect key="frame" x="288" y="53" width="75" height="17"/>
+                                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </view>
+                                                        <color key="backgroundColor" red="0.97853621099999999" green="0.97853621099999999" blue="0.97853621099999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <constraints>
+                                                            <constraint firstItem="j1b-oW-GG4" firstAttribute="baseline" secondItem="YDd-BB-E30" secondAttribute="baseline" id="5GG-It-1Ph"/>
+                                                            <constraint firstItem="YDd-BB-E30" firstAttribute="top" secondItem="sqh-1O-h2X" secondAttribute="top" constant="4" id="AJc-8J-tGU"/>
+                                                            <constraint firstItem="YDd-BB-E30" firstAttribute="leading" secondItem="C4w-7q-WLD" secondAttribute="trailing" constant="6" id="Abw-cj-hfq"/>
+                                                            <constraint firstAttribute="bottom" secondItem="C4w-7q-WLD" secondAttribute="bottom" constant="4" id="CiL-Fp-48x"/>
+                                                            <constraint firstItem="C4w-7q-WLD" firstAttribute="top" secondItem="sqh-1O-h2X" secondAttribute="top" constant="4" id="Ltt-uL-PwL"/>
+                                                            <constraint firstItem="C4w-7q-WLD" firstAttribute="leading" secondItem="sqh-1O-h2X" secondAttribute="leading" constant="8" id="dft-ml-myi"/>
+                                                            <constraint firstAttribute="trailing" secondItem="j1b-oW-GG4" secondAttribute="trailing" constant="4" id="icv-OL-v4Q"/>
+                                                            <constraint firstAttribute="bottom" secondItem="YDd-BB-E30" secondAttribute="bottom" constant="4" id="itI-9T-eB5"/>
+                                                            <constraint firstItem="j1b-oW-GG4" firstAttribute="leading" secondItem="YDd-BB-E30" secondAttribute="trailing" constant="4" id="sho-SD-QcH"/>
+                                                        </constraints>
+                                                        <connections>
+                                                            <outlet property="contentLabel" destination="C4w-7q-WLD" id="vH5-Cl-gWi"/>
+                                                            <outlet property="unitsLabel" destination="j1b-oW-GG4" id="JU8-fM-QHP"/>
+                                                            <outlet property="valueLabel" destination="YDd-BB-E30" id="bJy-A5-OWP"/>
+                                                            <outlet property="widthContraint" destination="TXB-hY-5xp" id="sJG-l4-rUX"/>
+                                                        </connections>
+                                                    </collectionViewCell>
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="notesCell" id="vzv-Je-1Ab" customClass="NotesCollectionViewCell" customModule="PrenatalCalc" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="122" width="367" height="78"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                                             <rect key="frame" x="0.0" y="0.0" width="367" height="78"/>
