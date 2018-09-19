@@ -7,21 +7,92 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8BD81F8A212B581C000041F8 /* Structure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD81F89212B581C000041F8 /* Structure.swift */; };
+		8BD81F8D212B5924000041F8 /* Pacients.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8BD81F8B212B5924000041F8 /* Pacients.xcdatamodeld */; };
+		8BD81F8F212B593D000041F8 /* CoreDataPacients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD81F8E212B593D000041F8 /* CoreDataPacients.swift */; };
+		8BD81F91212B5982000041F8 /* CoreDataNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD81F90212B5982000041F8 /* CoreDataNames.swift */; };
+		8BD81F93212B5C5B000041F8 /* PacientsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD81F92212B5C5B000041F8 /* PacientsViewController.swift */; };
+		8BD81F95212B5DC8000041F8 /* PacientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD81F94212B5DC8000041F8 /* PacientTableViewCell.swift */; };
+		8BD81F97212B62AA000041F8 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD81F96212B62AA000041F8 /* Date.swift */; };
+		8BD81F99212B66BA000041F8 /* NewPacientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD81F98212B66BA000041F8 /* NewPacientViewController.swift */; };
+		8BD81F9B212B68F7000041F8 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD81F9A212B68F7000041F8 /* StringExtension.swift */; };
+		B4086F9E213CAE16004505BB /* EditSegmentedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4086F9D213CAE16004505BB /* EditSegmentedTableViewCell.swift */; };
+		B42696752134A05F003980C4 /* DocSubtitleCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42696742134A05F003980C4 /* DocSubtitleCollectionReusableView.swift */; };
+		B42F92CD20F3E54A008E39B9 /* EditValuesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42F92CC20F3E54A008E39B9 /* EditValuesViewController.swift */; };
+		B42F92CF20F3F8B6008E39B9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42F92CE20F3F8B6008E39B9 /* Constants.swift */; };
+		B42F92D320F40A55008E39B9 /* ResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42F92D220F40A55008E39B9 /* ResultTableViewCell.swift */; };
 		B4A6058420F1AC9C00B59F61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A6058320F1AC9C00B59F61 /* AppDelegate.swift */; };
-		B4A6058620F1AC9C00B59F61 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A6058520F1AC9C00B59F61 /* ViewController.swift */; };
+		B4A6058620F1AC9C00B59F61 /* PresentDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A6058520F1AC9C00B59F61 /* PresentDataViewController.swift */; };
 		B4A6058920F1AC9C00B59F61 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4A6058720F1AC9C00B59F61 /* Main.storyboard */; };
 		B4A6058B20F1AC9D00B59F61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4A6058A20F1AC9D00B59F61 /* Assets.xcassets */; };
 		B4A6058E20F1AC9D00B59F61 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4A6058C20F1AC9D00B59F61 /* LaunchScreen.storyboard */; };
+		B4AD91B620FF65BA004BEB43 /* EditValueTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AD91B520FF65BA004BEB43 /* EditValueTableViewCell.swift */; };
+		B4AD91B820FF6B9F004BEB43 /* ChangeConstantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AD91B720FF6B9F004BEB43 /* ChangeConstantViewController.swift */; };
+		B4B82CD7213D909F001408F1 /* Patient+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B82CD5213D909F001408F1 /* Patient+CoreDataClass.swift */; };
+		B4B82CD8213D909F001408F1 /* Patient+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B82CD6213D909F001408F1 /* Patient+CoreDataProperties.swift */; };
+		B4C645E82134AEE90056073E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C645E72134AEE90056073E /* SettingsViewController.swift */; };
+		B4C645EA2134B1410056073E /* HideKeyBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C645E92134B1410056073E /* HideKeyBoard.swift */; };
+		B4E37FA4213B418C00BD765C /* HistoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E37FA3213B418C00BD765C /* HistoryCollectionViewCell.swift */; };
+		B4EF21D22146290500AF379D /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EF21D12146290500AF379D /* MenuTableViewCell.swift */; };
+		B4EF21D421462F8200AF379D /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EF21D321462F8200AF379D /* NotesViewController.swift */; };
+		B4EF21D6214633CC00AF379D /* PatientDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EF21D5214633CC00AF379D /* PatientDetailsViewController.swift */; };
+		B4EF21D821463EFB00AF379D /* NotesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EF21D721463EFB00AF379D /* NotesCollectionViewCell.swift */; };
+		B4F2D3FB213343710020A13B /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F2D3FA213343710020A13B /* PreviewViewController.swift */; };
+		B4F2D3FD213343CB0020A13B /* PreviewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F2D3FC213343CB0020A13B /* PreviewCollectionViewCell.swift */; };
+		B4F2D3FF2133456B0020A13B /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F2D3FE2133456B0020A13B /* Device.swift */; };
+		B4F2D40121335F7B0020A13B /* ValueCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F2D40021335F7B0020A13B /* ValueCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		B4C645F42134B1FE0056073E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		8BD81F89212B581C000041F8 /* Structure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Structure.swift; sourceTree = "<group>"; };
+		8BD81F8C212B5924000041F8 /* Pacients.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Pacients.xcdatamodel; sourceTree = "<group>"; };
+		8BD81F8E212B593D000041F8 /* CoreDataPacients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataPacients.swift; sourceTree = "<group>"; };
+		8BD81F90212B5982000041F8 /* CoreDataNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataNames.swift; sourceTree = "<group>"; };
+		8BD81F92212B5C5B000041F8 /* PacientsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PacientsViewController.swift; sourceTree = "<group>"; };
+		8BD81F94212B5DC8000041F8 /* PacientTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PacientTableViewCell.swift; sourceTree = "<group>"; };
+		8BD81F96212B62AA000041F8 /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		8BD81F98212B66BA000041F8 /* NewPacientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPacientViewController.swift; sourceTree = "<group>"; };
+		8BD81F9A212B68F7000041F8 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		B4086F9D213CAE16004505BB /* EditSegmentedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditSegmentedTableViewCell.swift; sourceTree = "<group>"; };
+		B42696742134A05F003980C4 /* DocSubtitleCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocSubtitleCollectionReusableView.swift; sourceTree = "<group>"; };
+		B42F92CC20F3E54A008E39B9 /* EditValuesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditValuesViewController.swift; sourceTree = "<group>"; };
+		B42F92CE20F3F8B6008E39B9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		B42F92D220F40A55008E39B9 /* ResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableViewCell.swift; sourceTree = "<group>"; };
 		B4A6058020F1AC9C00B59F61 /* PrenatalCalc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrenatalCalc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4A6058320F1AC9C00B59F61 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B4A6058520F1AC9C00B59F61 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B4A6058520F1AC9C00B59F61 /* PresentDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentDataViewController.swift; sourceTree = "<group>"; };
 		B4A6058820F1AC9C00B59F61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B4A6058A20F1AC9D00B59F61 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B4A6058D20F1AC9D00B59F61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B4A6058F20F1AC9D00B59F61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B4AD91B520FF65BA004BEB43 /* EditValueTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditValueTableViewCell.swift; sourceTree = "<group>"; };
+		B4AD91B720FF6B9F004BEB43 /* ChangeConstantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeConstantViewController.swift; sourceTree = "<group>"; };
+		B4B82CD5213D909F001408F1 /* Patient+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Patient+CoreDataClass.swift"; sourceTree = "<group>"; };
+		B4B82CD6213D909F001408F1 /* Patient+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Patient+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		B4C645E72134AEE90056073E /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		B4C645E92134B1410056073E /* HideKeyBoard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HideKeyBoard.swift; sourceTree = "<group>"; };
+		B4E37FA3213B418C00BD765C /* HistoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		B4EF21D12146290500AF379D /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
+		B4EF21D321462F8200AF379D /* NotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
+		B4EF21D5214633CC00AF379D /* PatientDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientDetailsViewController.swift; sourceTree = "<group>"; };
+		B4EF21D721463EFB00AF379D /* NotesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesCollectionViewCell.swift; sourceTree = "<group>"; };
+		B4F2D3FA213343710020A13B /* PreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
+		B4F2D3FC213343CB0020A13B /* PreviewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewCollectionViewCell.swift; sourceTree = "<group>"; };
+		B4F2D3FE2133456B0020A13B /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
+		B4F2D40021335F7B0020A13B /* ValueCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +106,81 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B4086F96213C9C9A004505BB /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				8BD81F96212B62AA000041F8 /* Date.swift */,
+				B4F2D3FE2133456B0020A13B /* Device.swift */,
+				B4C645E92134B1410056073E /* HideKeyBoard.swift */,
+				8BD81F9A212B68F7000041F8 /* StringExtension.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		B4086F97213C9D29004505BB /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				B4B82CD5213D909F001408F1 /* Patient+CoreDataClass.swift */,
+				B4B82CD6213D909F001408F1 /* Patient+CoreDataProperties.swift */,
+				8BD81F8B212B5924000041F8 /* Pacients.xcdatamodeld */,
+				8BD81F8E212B593D000041F8 /* CoreDataPacients.swift */,
+				8BD81F90212B5982000041F8 /* CoreDataNames.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		B4086F98213C9D64004505BB /* Pacients */ = {
+			isa = PBXGroup;
+			children = (
+				B4EF21D5214633CC00AF379D /* PatientDetailsViewController.swift */,
+				8BD81F92212B5C5B000041F8 /* PacientsViewController.swift */,
+				8BD81F94212B5DC8000041F8 /* PacientTableViewCell.swift */,
+				8BD81F98212B66BA000041F8 /* NewPacientViewController.swift */,
+			);
+			path = Pacients;
+			sourceTree = "<group>";
+		};
+		B4086F99213C9DE1004505BB /* CalculationData */ = {
+			isa = PBXGroup;
+			children = (
+				B4EF21D12146290500AF379D /* MenuTableViewCell.swift */,
+				B42F92D220F40A55008E39B9 /* ResultTableViewCell.swift */,
+				B4A6058520F1AC9C00B59F61 /* PresentDataViewController.swift */,
+				B4E37FA3213B418C00BD765C /* HistoryCollectionViewCell.swift */,
+			);
+			path = CalculationData;
+			sourceTree = "<group>";
+		};
+		B4086F9A213C9DF9004505BB /* EditCalculationData */ = {
+			isa = PBXGroup;
+			children = (
+				B42F92CC20F3E54A008E39B9 /* EditValuesViewController.swift */,
+				B4AD91B520FF65BA004BEB43 /* EditValueTableViewCell.swift */,
+				B4086F9D213CAE16004505BB /* EditSegmentedTableViewCell.swift */,
+			);
+			path = EditCalculationData;
+			sourceTree = "<group>";
+		};
+		B4086F9B213C9E52004505BB /* Document */ = {
+			isa = PBXGroup;
+			children = (
+				B4EF21D721463EFB00AF379D /* NotesCollectionViewCell.swift */,
+				B4EF21D321462F8200AF379D /* NotesViewController.swift */,
+				B4F2D3FA213343710020A13B /* PreviewViewController.swift */,
+				B42696742134A05F003980C4 /* DocSubtitleCollectionReusableView.swift */,
+				B4F2D40021335F7B0020A13B /* ValueCollectionViewCell.swift */,
+			);
+			path = Document;
+			sourceTree = "<group>";
+		};
+		B4086F9C213C9ECA004505BB /* Limbo */ = {
+			isa = PBXGroup;
+			children = (
+				B4F2D3FC213343CB0020A13B /* PreviewCollectionViewCell.swift */,
+			);
+			path = Limbo;
+			sourceTree = "<group>";
+		};
 		B4A6057720F1AC9C00B59F61 = {
 			isa = PBXGroup;
 			children = (
@@ -54,14 +200,32 @@
 		B4A6058220F1AC9C00B59F61 /* PrenatalCalc */ = {
 			isa = PBXGroup;
 			children = (
-				B4A6058320F1AC9C00B59F61 /* AppDelegate.swift */,
-				B4A6058520F1AC9C00B59F61 /* ViewController.swift */,
 				B4A6058720F1AC9C00B59F61 /* Main.storyboard */,
+				B4A6058320F1AC9C00B59F61 /* AppDelegate.swift */,
+				B4C645EB2134B1D80056073E /* ImagePicker */,
+				B4086F9B213C9E52004505BB /* Document */,
+				B4086F96213C9C9A004505BB /* Utilities */,
+				B4086F97213C9D29004505BB /* CoreData */,
+				B4086F98213C9D64004505BB /* Pacients */,
+				B4086F99213C9DE1004505BB /* CalculationData */,
+				B4086F9A213C9DF9004505BB /* EditCalculationData */,
+				B4AD91B720FF6B9F004BEB43 /* ChangeConstantViewController.swift */,
+				B4C645E72134AEE90056073E /* SettingsViewController.swift */,
+				8BD81F89212B581C000041F8 /* Structure.swift */,
+				B42F92CE20F3F8B6008E39B9 /* Constants.swift */,
 				B4A6058A20F1AC9D00B59F61 /* Assets.xcassets */,
 				B4A6058C20F1AC9D00B59F61 /* LaunchScreen.storyboard */,
 				B4A6058F20F1AC9D00B59F61 /* Info.plist */,
+				B4086F9C213C9ECA004505BB /* Limbo */,
 			);
 			path = PrenatalCalc;
+			sourceTree = "<group>";
+		};
+		B4C645EB2134B1D80056073E /* ImagePicker */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ImagePicker;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,6 +238,7 @@
 				B4A6057C20F1AC9C00B59F61 /* Sources */,
 				B4A6057D20F1AC9C00B59F61 /* Frameworks */,
 				B4A6057E20F1AC9C00B59F61 /* Resources */,
+				B4C645F42134B1FE0056073E /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -135,8 +300,37 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B4A6058620F1AC9C00B59F61 /* ViewController.swift in Sources */,
+				B42696752134A05F003980C4 /* DocSubtitleCollectionReusableView.swift in Sources */,
+				B4A6058620F1AC9C00B59F61 /* PresentDataViewController.swift in Sources */,
+				B4EF21D22146290500AF379D /* MenuTableViewCell.swift in Sources */,
+				B4086F9E213CAE16004505BB /* EditSegmentedTableViewCell.swift in Sources */,
+				8BD81F97212B62AA000041F8 /* Date.swift in Sources */,
+				B42F92CD20F3E54A008E39B9 /* EditValuesViewController.swift in Sources */,
+				8BD81F8A212B581C000041F8 /* Structure.swift in Sources */,
 				B4A6058420F1AC9C00B59F61 /* AppDelegate.swift in Sources */,
+				B4EF21D821463EFB00AF379D /* NotesCollectionViewCell.swift in Sources */,
+				B4B82CD7213D909F001408F1 /* Patient+CoreDataClass.swift in Sources */,
+				B4E37FA4213B418C00BD765C /* HistoryCollectionViewCell.swift in Sources */,
+				8BD81F8D212B5924000041F8 /* Pacients.xcdatamodeld in Sources */,
+				8BD81F99212B66BA000041F8 /* NewPacientViewController.swift in Sources */,
+				8BD81F9B212B68F7000041F8 /* StringExtension.swift in Sources */,
+				B4F2D3FD213343CB0020A13B /* PreviewCollectionViewCell.swift in Sources */,
+				B4AD91B820FF6B9F004BEB43 /* ChangeConstantViewController.swift in Sources */,
+				B4AD91B620FF65BA004BEB43 /* EditValueTableViewCell.swift in Sources */,
+				8BD81F95212B5DC8000041F8 /* PacientTableViewCell.swift in Sources */,
+				8BD81F8F212B593D000041F8 /* CoreDataPacients.swift in Sources */,
+				B4C645E82134AEE90056073E /* SettingsViewController.swift in Sources */,
+				B4EF21D421462F8200AF379D /* NotesViewController.swift in Sources */,
+				B4C645EA2134B1410056073E /* HideKeyBoard.swift in Sources */,
+				8BD81F91212B5982000041F8 /* CoreDataNames.swift in Sources */,
+				B4F2D40121335F7B0020A13B /* ValueCollectionViewCell.swift in Sources */,
+				B4EF21D6214633CC00AF379D /* PatientDetailsViewController.swift in Sources */,
+				B42F92D320F40A55008E39B9 /* ResultTableViewCell.swift in Sources */,
+				B4B82CD8213D909F001408F1 /* Patient+CoreDataProperties.swift in Sources */,
+				8BD81F93212B5C5B000041F8 /* PacientsViewController.swift in Sources */,
+				B42F92CF20F3F8B6008E39B9 /* Constants.swift in Sources */,
+				B4F2D3FB213343710020A13B /* PreviewViewController.swift in Sources */,
+				B4F2D3FF2133456B0020A13B /* Device.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +476,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8S6K3F9Y43;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/PrenatalCalc/ImagePicker",
+				);
 				INFOPLIST_FILE = PrenatalCalc/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -300,6 +498,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8S6K3F9Y43;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/PrenatalCalc/ImagePicker",
+				);
 				INFOPLIST_FILE = PrenatalCalc/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -334,6 +536,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		8BD81F8B212B5924000041F8 /* Pacients.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				8BD81F8C212B5924000041F8 /* Pacients.xcdatamodel */,
+			);
+			currentVersion = 8BD81F8C212B5924000041F8 /* Pacients.xcdatamodel */;
+			path = Pacients.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = B4A6057820F1AC9C00B59F61 /* Project object */;
 }
