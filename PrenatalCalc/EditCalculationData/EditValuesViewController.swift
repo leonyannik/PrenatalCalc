@@ -36,7 +36,6 @@ class EditValuesViewController: UIViewController {
         if !editingSolution {
             patientThings = try! jsonDecoder.decode(Things.self, from: patient!.things as! Data)
             let mirroredValues = Mirror(reflecting: patientThings.patientValues)
-            
             for child in mirroredValues.children {
                 if let value = child.value as? Double {
                     patientValues[child.label!] =  value
@@ -44,12 +43,7 @@ class EditValuesViewController: UIViewController {
             }
             tableView.reloadData()
         }
-        
-        
-        // Do any additional setup after loading the view.
     }
-    
-    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -96,32 +90,14 @@ extension EditValuesViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //        if conKeys[indexPath.row] != "kclAmp10" {
         let cell = tableView.dequeueReusableCell(withIdentifier: "constantsCell") as! EditValueTableViewCell
         let key = providedValuesKeys[indexPath.row]
         let item = patientValues[key]
-        var text = key.uppercased().replacingOccurrences(of: "_", with: " ").replacingOccurrences(of: "JJ", with: "/").replacingOccurrences(of: "J", with: "-")
-        if [3,4,5,6].contains(indexPath.row) {
-            text.append("%")
-        }
-        cell.nameLabel.text = text
+        cell.nameLabel.text = displayNames[key]!.uppercased()
         if item != nil {
             cell.valueLabel.text = String(item!)
         }
         return cell
-        //        }else {
-        //            let cell = tableView.dequeueReusableCell(withIdentifier: "editSelectCell") as! EditSegmentedTableViewCell
-        //            let item = patientValues[indexPath.row]
-        //            cell.nameLabel.text = item.0
-        //            cell.valueLabel.text = String(item.1)
-        //
-        //            cell.delegate = self
-        //            cell.nameSegmentedControl.setTitle(key, forSegmentAt: 0)
-        //            cell.nameSegmentedControl.setTitleTextAttributes([kCTFontAttributeName: UIFont.systemFont(ofSize: 20.0)], for: .normal)
-        ////            cell.nameSegmentedControl.setContentOffset(CGSize(width: -(key.count / 2 * 7), height: 0), forSegmentAt: 0)
-        //            cell.valueLabel.text = String(value)
-        //            return cell
-        //        }
     }
 }
 

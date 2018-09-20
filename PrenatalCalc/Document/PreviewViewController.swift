@@ -25,8 +25,8 @@ class PreviewViewController: UIViewController {
     var patient: Patient?
     var solution: SolutionToUse?
     var note: String!
-    var colors = [UIColor(red: 1, green: 0.974, blue: 0.522, alpha: 1), UIColor(red: 0.806, green: 0.995, blue: 1, alpha: 1), UIColor(red: 0.776, green: 1, blue: 0.904, alpha: 1), UIColor(red: 1, green: 0.884, blue: 0.702, alpha: 1)]
     let gray = UIColor(red: 0.98, green: 0.98, blue: 0.976, alpha: 1)
+    var colors = [UIColor(red: 1, green: 0.974, blue: 0.522, alpha: 1), UIColor(red: 0.806, green: 0.995, blue: 1, alpha: 1), UIColor(red: 0.776, green: 1, blue: 0.904, alpha: 1), UIColor(red: 1, green: 0.884, blue: 0.702, alpha: 1), UIColor(red: 0.98, green: 0.98, blue: 0.976, alpha: 1)]
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
@@ -60,14 +60,11 @@ class PreviewViewController: UIViewController {
         let printInfo = UIPrintInfo(dictionary:nil)
         printInfo.outputType = UIPrintInfoOutputType.general
         printInfo.jobName = "CálculoParenteral"
-        // Set up print controller
-        var printController = UIPrintInteractionController.shared
+        let printController = UIPrintInteractionController.shared
         printController.printInfo = printInfo
-        // Assign a UIImage version of my UIView as a printing iten
         printController.printingItem = printingView.toImage()
-        // Do it
         printController.present(from: printingView.bounds, in: printingView, animated: true, completionHandler: nil)
-        colors = [UIColor(red: 1, green: 0.974, blue: 0.522, alpha: 1), UIColor(red: 0.806, green: 0.995, blue: 1, alpha: 1), UIColor(red: 0.776, green: 1, blue: 0.904, alpha: 1), UIColor(red: 1, green: 0.884, blue: 0.702, alpha: 1)]
+        colors = [UIColor(red: 1, green: 0.974, blue: 0.522, alpha: 1), UIColor(red: 0.806, green: 0.995, blue: 1, alpha: 1), UIColor(red: 0.776, green: 1, blue: 0.904, alpha: 1), UIColor(red: 1, green: 0.884, blue: 0.702, alpha: 1), gray]
         collectionView.reloadData()
     }
     @IBAction func composeMailButtonTapped(_ sender: Any) {
@@ -78,14 +75,11 @@ class PreviewViewController: UIViewController {
             generatePdfFromView(filename: "view") { (pdf) in
                 let composeVC = MFMailComposeViewController()
                 composeVC.mailComposeDelegate = self
-                // Configure the fields of the interface.
-//                composeVC.setToRecipients(["leonrlc@hotmail.com"])
                 composeVC.setSubject("Cálculo Prenatal")
                 composeVC.setMessageBody("Preparar la siguiente solución", isHTML: false)
-                // Present the view controller modally.
                 composeVC.addAttachmentData(pdf as Data, mimeType: "application/pdf", fileName: "orden de solución parenteral")
                 self.present(composeVC, animated: true, completion: nil)
-                colors = [UIColor(red: 1, green: 0.974, blue: 0.522, alpha: 1), UIColor(red: 0.806, green: 0.995, blue: 1, alpha: 1), UIColor(red: 0.776, green: 1, blue: 0.904, alpha: 1), UIColor(red: 1, green: 0.884, blue: 0.702, alpha: 1)]
+                colors = [UIColor(red: 1, green: 0.974, blue: 0.522, alpha: 1), UIColor(red: 0.806, green: 0.995, blue: 1, alpha: 1), UIColor(red: 0.776, green: 1, blue: 0.904, alpha: 1), UIColor(red: 1, green: 0.884, blue: 0.702, alpha: 1), gray]
                 collectionView.reloadData()
             }
         }
@@ -158,13 +152,13 @@ extension PreviewViewController: UIScrollViewDelegate {
 
 extension PreviewViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        var size = CGSize(width: (collectionView.frame.size.width / 2) - (collectionView.frame.size.width / 160), height: (collectionView.frame.size.width / 24) - (collectionView.frame.size.width / 160))
+        var size = CGSize(width: (collectionView.frame.size.width / 2) - (collectionView.frame.size.width / 160), height: (collectionView.frame.size.width / 26) - (collectionView.frame.size.width / 160))
         if indexPath.section == 1 {
-            size = CGSize(width: (collectionView.frame.size.width / 3) - (collectionView.frame.size.width / 160), height: (collectionView.frame.size.width / 24) - (collectionView.frame.size.width / 160))
+            size = CGSize(width: (collectionView.frame.size.width / 3) - (collectionView.frame.size.width / 160), height: (collectionView.frame.size.width / 22) - (collectionView.frame.size.width / 160))
         }else if indexPath.section == 2 {
-            size = CGSize(width: (collectionView.frame.size.width / 3) - (collectionView.frame.size.width / 160), height: (collectionView.frame.size.width / 26) - (collectionView.frame.size.width / 160))
+            size = CGSize(width: (collectionView.frame.size.width / 3) - (collectionView.frame.size.width / 160), height: (collectionView.frame.size.width / 22) - (collectionView.frame.size.width / 160))
         }else if indexPath.section == 3 {
-            size = CGSize(width: (collectionView.frame.size.width / 4) - (collectionView.frame.size.width / 160), height: (collectionView.frame.size.width / 24) - (collectionView.frame.size.width / 160))
+            size = CGSize(width: (collectionView.frame.size.width / 4) - (collectionView.frame.size.width / 160), height: (collectionView.frame.size.width / 26) - (collectionView.frame.size.width / 160))
         }else if indexPath.section == 4 {
             size = CGSize(width: collectionView.frame.size.width - (collectionView.frame.size.width / 160), height: (collectionView.frame.size.width / 8) - (collectionView.frame.size.width / 160))
         }
@@ -236,22 +230,18 @@ extension PreviewViewController: UICollectionViewDataSource {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "valueCell", for: indexPath) as! ValueCollectionViewCell
             cell.layer.cornerRadius = 2
             let key = solutionValuesKeys[indexPath.row]
-            cell.contentLabel.text = key.uppercased().replacingOccurrences(of: "_", with: " ").replacingOccurrences(of: "JJ", with: "/").replacingOccurrences(of: "J", with: "-").replacingOccurrences(of: "JJ", with: "/") + ":"
+            cell.contentLabel.text = displayNames[key]!.uppercased() + ":"
             cell.valueLabel.text = String(patientValues[key]!)
-            cell.unitsLabel.text = unityDictionary[key]
+            cell.unitsLabel.text = units[key]
             cell.backgroundColor = colors[1]
             return cell
         case 2:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "valueCell", for: indexPath) as! ValueCollectionViewCell
             cell.layer.cornerRadius = 2
             let key = otherSolutionValuesKeys[indexPath.row]
-            var before = ""
-            if [10,11,12,13].contains(indexPath.row) {
-                before = "% "
-            }
-            cell.contentLabel.text = before + key.uppercased().replacingOccurrences(of: "_", with: " ").replacingOccurrences(of: "JJ", with: "/").replacingOccurrences(of: "J", with: "-") + ":"
+            cell.contentLabel.text = displayNames[key]!.uppercased() + ":"
             cell.valueLabel.text = String(patientValues[key]!)
-            cell.unitsLabel.text = unityDictionary[key]
+            cell.unitsLabel.text = units[key]
             cell.backgroundColor = colors[2]
             return cell
         case 3:
@@ -263,6 +253,7 @@ extension PreviewViewController: UICollectionViewDataSource {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "notesCell", for: indexPath) as! NotesCollectionViewCell
             cell.layer.cornerRadius = 2
             cell.notesLabel.text = aditionalInformation + "\n " + note
+            cell.backgroundColor = colors[4]
             return cell
         }
     }

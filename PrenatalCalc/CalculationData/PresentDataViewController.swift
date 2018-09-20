@@ -35,6 +35,7 @@ class PresentDataViewController: UIViewController {
         calculateButton.layer.cornerRadius = 9
         tableView.tableFooterView = UIView()
         tableView.alwaysBounceVertical = false
+        tableView.estimatedRowHeight = 60
         weightLabel.text = String(patient!.lastWeight) + " Kg"
         patientThings = try! jsonDecoder.decode(Things.self, from: patient!.things as! Data)
         solutions = patientThings.solution
@@ -147,18 +148,18 @@ class PresentDataViewController: UIViewController {
         
         ps.weight = weight
         ps.líquidos_iv_tot = Double(round(100 * (weight * dv.líquidos)) / 100)
-        ps.trophamine_10 = Double(round(100 * (weight * dv.prot_10 * 10)) / 100)
-        ps.trophamine_8 = Double(round(100 * (weight * dv.prot_8 * 8)) / 100)
+        ps.trophamine_10 = Double(round(100 * (weight * dv.prot_10 / 0.1)) / 100)
+        ps.trophamine_8 = Double(round(100 * (weight * dv.prot_8 / 0.08)) / 100)
         ps.intralipid_20 = Double(round(100 * (weight * dv.lípidos * 5)) / 100)
         ps.sg_50 = Double(round(100 * (weight * dv.chs_50 * 1440 / 500)) / 100)
         ps.sg_10 = Double(round(100 * (weight * dv.chs_10 * 1440 / 100)) / 100)
-        ps.kcl_amp_10 = Double(round(100 * (weight * dv.kcl_amp_10_ * 1 / 2)) / 100)
-        ps.kcl_amp_5 = Double(round(100 * (weight * dv.kcl_amp_5_ * 1 / 4)) / 100)
-        ps.naclhip = Double(round(100 * (weight * dv.naclhip_ * 1 / 3)) / 100)
+        ps.kcl_amp_10 = Double(round(100 * (weight * dv.kcl_amp_10_ / 2)) / 100)
+        ps.kcl_amp_5 = Double(round(100 * (weight * dv.kcl_amp_5_ / 4)) / 100)
+        ps.naclhip = Double(round(100 * (weight * dv.naclhip_ / 3)) / 100)
         ps.sol_fisiológica = Double(round(100 * (weight * dv.sol_fisiológica_ * 100 / 15.4)) / 100)
         ps.fosfato_k = Double(round(100 * (weight * dv.fosfato_k_ / 1.102)) / 100)
         ps.glucca = Double(round(100 * (weight * dv.calcio_ / 100)) / 100)
-        ps.magnesio = Double(round(100 * (weight * dv.magnesio_ / 100)) / 100)
+        ps.magnesio = Double(round(100 * (weight * dv.magnesio_ * 0.01)) / 100)
         ps.mvi = (1.7 * weight) > 5 ? 5 : Double(round(100 * (1.7 * weight)) / 100)
         ps.oligoelementos = Double(round(100 * (dv.oligoelementos_ * weight)) / 100)
         ps.l_cisteína = (proteins * weight * 100 / 2.5) > 100 ? 100 : Double(round(100 * (proteins * weight * 100 / 2.5)) / 100)
@@ -166,21 +167,21 @@ class PresentDataViewController: UIViewController {
         if Int(patient!.weeks!)! >= 32 {
             ps.heparina = 0
         }else {
-            ps.heparina = dv.heparina_ * ps.intralipid_20
+            ps.heparina = Double(round(100 * (dv.heparina_ * ps.intralipid_20)) / 100)
         }
         let sum = Double(round(100 * (ps.oligoelementos + ps.mvi + ps.magnesio + ps.glucca + ps.fosfato_k + ps.naclhip + ps.sol_fisiológica + ps.trophamine_10 + ps.trophamine_8 + ps.sg_50 + ps.sg_10 + ps.kcl_amp_10 + ps.kcl_amp_5 + ps.intralipid_20)) / 100)
-        ps.abd = ps.líquidos_iv_tot - sum
+        ps.abd = Double(round(100 * (ps.líquidos_iv_tot - sum)) / 100)
         ps.líquidos_tot = ps.líquidos_iv_tot
-        ps.calorías_tot = (carbs * 3.4) + (dv.lípidos * 10) + (proteins * 4)
+        ps.calorías_tot = Double(round(100 * ((carbs * 3.4) + (dv.lípidos * 11) + (proteins * 4))) / 100)
         ps.caljjml = Double(round(100 * (ps.calorías_tot / ps.líquidos_tot)) / 100)
         ps.caljjkgjjdia = Double(round(100 * (ps.calorías_tot / weight)) / 100)
         ps.infusión = Double(round(100 * (ps.líquidos_tot / 24)) / 100)
-        ps.nitrógeno = Double(round(100 * (proteins * weight / 6.5)) / 100)
-        ps.relcnpjntg = (carbs * 3.4) + (dv.lípidos * 10)
-        ps.concentración = 0//TODO: Falta concentración
+        ps.nitrógeno = Double(round(100 * (proteins * weight / 6.25)) / 100)
+        ps.relcnpjntg = Double(round(100 * (((carbs * 3.4) + (dv.lípidos * 11)) / ps.nitrógeno)) / 100)
+        ps.concentración = Double(round(100 * (carbs * weight / ps.líquidos_tot * 100)) / 100)
         ps.gkm = Double(round(100 * (carbs * 1000 / 1440)) / 100)
         ps.calprot = Double(round(100 * ((proteins * 4 * 100) / ps.calorías_tot)) / 100)
-        ps.calgrasa = Double(round(100 * ((dv.lípidos * 10 * 100) / ps.calorías_tot)) / 100)
+        ps.calgrasa = Double(round(100 * ((dv.lípidos * 11 * 100) / ps.calorías_tot)) / 100)
         ps.calchs50 = Double(round(100 * ((dv.chs_50 * 3.4 * 100) / ps.calorías_tot)) / 100)
         ps.calchs10 = Double(round(100 * ((dv.chs_10 * 3.4 * 100) / ps.calorías_tot)) / 100)
         
@@ -300,18 +301,15 @@ extension PresentDataViewController: UITableViewDataSource {
         default:
             key = otherSolutionValuesKeys[indexPath.row]
             value = String(solutionValues[key]!)
-            if [10,11,12,13].contains(indexPath.row) {
-                key = "% " + key
-            }
         }
         let cell = tableView.dequeueReusableCell(withIdentifier: "resultCell") as! ResultTableViewCell
-        cell.nameLabel.text = key.uppercased().replacingOccurrences(of: "_", with: " ").replacingOccurrences(of: "JJ", with: "/").replacingOccurrences(of: "J", with: "-")
-        cell.valueLabel.text = value + " \(unityDictionary[key.replacingOccurrences(of: " ", with: "").replacingOccurrences(of: "%", with: "")]!)"
+        cell.nameLabel.text = displayNames[key]!.uppercased()
+        cell.valueLabel.text = value + " \(units[key.replacingOccurrences(of: " ", with: "").replacingOccurrences(of: "%", with: "")]!)"
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60
+        return UITableViewAutomaticDimension
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
