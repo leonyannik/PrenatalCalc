@@ -123,13 +123,6 @@ extension EditValuesViewController: SendConstantValueProtocol {
                 values.changeProperty(name: "chs_10", value: 0)
                 patientValues["chs_50"] =  0
                 patientValues["chs_10"] =  0
-            }else if ["fosfato_k_", "kcl_amp_10_", "kcl_amp_5_"].contains(keyBeingEdited) {
-                values.changeProperty(name: "fosfato_k_", value: 0)
-                values.changeProperty(name: "kcl_amp_10_", value: 0)
-                values.changeProperty(name: "kcl_amp_5_", value: 0)
-                patientValues["fosfato_k_"] =  0
-                patientValues["kcl_amp_10_"] =  0
-                patientValues["kcl_amp_5_"] =  0
             }else if ["naclhip_", "sol_fisiológica_"].contains(keyBeingEdited) {
                 values.changeProperty(name: "naclhip_", value: 0)
                 values.changeProperty(name: "sol_fisiológica_", value: 0)
@@ -148,13 +141,6 @@ extension EditValuesViewController: SendConstantValueProtocol {
                 patientThings.patientValues.changeProperty(name: "chs_10", value: 0)
                 patientValues["chs_50"] =  0
                 patientValues["chs_10"] =  0
-            }else if ["fosfato_k_", "kcl_amp_10_", "kcl_amp_5_"].contains(keyBeingEdited) {
-                patientThings.patientValues.changeProperty(name: "fosfato_k_", value: 0)
-                patientThings.patientValues.changeProperty(name: "kcl_amp_10_", value: 0)
-                patientThings.patientValues.changeProperty(name: "kcl_amp_5_", value: 0)
-                patientValues["fosfato_k_"] =  0
-                patientValues["kcl_amp_10_"] =  0
-                patientValues["kcl_amp_5_"] =  0
             }else if ["naclhip_", "sol_fisiológica_"].contains(keyBeingEdited) {
                 patientThings.patientValues.changeProperty(name: "naclhip_", value: 0)
                 patientThings.patientValues.changeProperty(name: "sol_fisiológica_", value: 0)

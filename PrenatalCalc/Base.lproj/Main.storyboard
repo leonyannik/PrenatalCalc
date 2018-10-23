@@ -1287,14 +1287,14 @@
         </scene>
     </scenes>
     <resources>
-        <image name="doctorSettings" width="25" height="25"/>
-        <image name="edit" width="30" height="30"/>
-        <image name="iconOfPrinter" width="30" height="30"/>
-        <image name="placeHolder" width="1024" height="1024"/>
-        <image name="sendEmail" width="30" height="30"/>
+        <image name="doctorSettings" width="37.5" height="37.5"/>
+        <image name="edit" width="45" height="45"/>
+        <image name="iconOfPrinter" width="45" height="45"/>
+        <image name="placeHolder" width="245.75999450683594" height="245.75999450683594"/>
+        <image name="sendEmail" width="45" height="45"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="80P-Tl-5fV"/>
+        <segue reference="j3H-pJ-fP6"/>
         <segue reference="jFb-tU-Y8w"/>
         <segue reference="F4D-bl-bIA"/>
     </inferredMetricsTieBreakers>

@@ -101,34 +101,42 @@ class PresentDataViewController: UIViewController {
     @IBAction func calculateButtonTapped(_ sender: Any) {
         calculateValues(defaultValues: patientThings.patientValues, new: true)
     }
-
+    
     @IBAction func editButtonTapped(_ sender: Any) {
-        
-        let values = solutions[selectedSolutionIndex]
-        valuesToEdit.líquidos = values.líquidos
-        valuesToEdit.sol_fisiológica_ = values.sol_fisiológica_
-        valuesToEdit.prot_10 = values.prot_10
-        valuesToEdit.prot_8 = values.prot_8
-        valuesToEdit.chs_50 = values.chs_50
-        valuesToEdit.chs_10 = values.chs_10
-        valuesToEdit.kcl_amp_10_ = values.kcl_amp_10_
-        valuesToEdit.kcl_amp_5_ = values.kcl_amp_5_
-        valuesToEdit.naclhip_ = values.naclhip_
-        valuesToEdit.lípidos = values.lípidos
-        valuesToEdit.fosfato_k_ = values.fosfato_k_
-        valuesToEdit.calcio_ = values.calcio_
-        valuesToEdit.magnesio_ = values.magnesio_
-        valuesToEdit.mvi_ = values.mvi_
-        valuesToEdit.oligoelementos_ = values.oligoelementos_
-        valuesToEdit.carnitina_ = values.carnitina_
-        valuesToEdit.heparina_ = values.heparina_
-        let mirroredValues = Mirror(reflecting: valuesToEdit)
-        for child in mirroredValues.children {
-            if let value = child.value as? Double {
-                solutionValuesToBeEdited[child.label!] =  value
+        if solutions.count > 0 {
+            let values = solutions[selectedSolutionIndex]
+            valuesToEdit.líquidos = values.líquidos
+            valuesToEdit.sol_fisiológica_ = values.sol_fisiológica_
+            valuesToEdit.prot_10 = values.prot_10
+            valuesToEdit.prot_8 = values.prot_8
+            valuesToEdit.chs_50 = values.chs_50
+            valuesToEdit.chs_10 = values.chs_10
+            valuesToEdit.kcl_amp_10_ = values.kcl_amp_10_
+            valuesToEdit.kcl_amp_5_ = values.kcl_amp_5_
+            valuesToEdit.naclhip_ = values.naclhip_
+            valuesToEdit.lípidos = values.lípidos
+            valuesToEdit.fosfato_k_ = values.fosfato_k_
+            valuesToEdit.calcio_ = values.calcio_
+            valuesToEdit.magnesio_ = values.magnesio_
+            valuesToEdit.mvi_ = values.mvi_
+            valuesToEdit.oligoelementos_ = values.oligoelementos_
+            valuesToEdit.carnitina_ = values.carnitina_
+            valuesToEdit.heparina_ = values.heparina_
+            let mirroredValues = Mirror(reflecting: valuesToEdit)
+            for child in mirroredValues.children {
+                if let value = child.value as? Double {
+                    solutionValuesToBeEdited[child.label!] =  value
+                }
             }
+            performSegue(withIdentifier: "toEditValuesSegue", sender: nil)
+        }else {
+            let alert = UIAlertController(title: "Aguarde", message: "Debe tener algún cálculo para poder editarlo", preferredStyle: .alert)
+            let action = UIAlertAction(title: "OK", style: .default) { action in
+                
+            }
+            alert.addAction(action)
+            present(alert, animated: true, completion: nil)
         }
-        performSegue(withIdentifier: "toEditValuesSegue", sender: nil)
     }
     
     
@@ -158,11 +166,14 @@ class PresentDataViewController: UIViewController {
         ps.naclhip = Double(round(100 * (weight * dv.naclhip_ / 3)) / 100)
         ps.sol_fisiológica = Double(round(100 * (weight * dv.sol_fisiológica_ * 100 / 15.4)) / 100)
         ps.fosfato_k = Double(round(100 * (weight * dv.fosfato_k_ / 1.102)) / 100)
-        ps.glucca = Double(round(100 * (weight * dv.calcio_ / 100)) / 100)
-        ps.magnesio = Double(round(100 * (weight * dv.magnesio_ * 0.01)) / 100)
+        
+        ps.glucca = Double(round(100 * (weight * dv.calcio_ / 100) * 0.464) / 100)
+        ps.magnesio = Double(round(100 * (weight * dv.magnesio_ * 0.01) * 0.81) / 100)
+        
         ps.mvi = (1.7 * weight) > 5 ? 5 : Double(round(100 * (1.7 * weight)) / 100)
         ps.oligoelementos = Double(round(100 * (dv.oligoelementos_ * weight)) / 100)
-        ps.l_cisteína = (proteins * weight * 100 / 2.5) > 100 ? 100 : Double(round(100 * (proteins * weight * 100 / 2.5)) / 100)
+//        ps.l_cisteína = (proteins * weight * 100 / 2.5) > 100 ? 100 : Double(round(100 * (proteins * weight * 100 / 2.5)) / 100)
+        ps.l_cisteína = Double(round(100 * (proteins * weight * 100 / 2.5)) / 100)
         ps.carnitina = Double(round(100 * (dv.carnitina_ * weight)) / 100)
         if Int(patient!.weeks!)! >= 32 {
             ps.heparina = 0
@@ -172,7 +183,7 @@ class PresentDataViewController: UIViewController {
         let sum = Double(round(100 * (ps.oligoelementos + ps.mvi + ps.magnesio + ps.glucca + ps.fosfato_k + ps.naclhip + ps.sol_fisiológica + ps.trophamine_10 + ps.trophamine_8 + ps.sg_50 + ps.sg_10 + ps.kcl_amp_10 + ps.kcl_amp_5 + ps.intralipid_20)) / 100)
         ps.abd = Double(round(100 * (ps.líquidos_iv_tot - sum)) / 100)
         ps.líquidos_tot = ps.líquidos_iv_tot
-        ps.calorías_tot = Double(round(100 * ((carbs * 3.4) + (dv.lípidos * 11) + (proteins * 4))) / 100)
+        ps.calorías_tot = Double(round(100 * ((carbs * 3.4) + (dv.lípidos * 11) + (proteins * 4 * weight))) / 100)
         ps.caljjml = Double(round(100 * (ps.calorías_tot / ps.líquidos_tot)) / 100)
         ps.caljjkgjjdia = Double(round(100 * (ps.calorías_tot / weight)) / 100)
         ps.infusión = Double(round(100 * (ps.líquidos_tot / 24)) / 100)
@@ -213,6 +224,22 @@ class PresentDataViewController: UIViewController {
         if ps.abd < 0 {
             print("Se pasa")
             let alert = UIAlertController(title: "Atención", message: "Al calcular con CHS 10%, se excede el valor de líquidos intravenosos totales permitidos por: \(-ps.abd) ml, por favor, calcule usando CHS 50%", preferredStyle: .alert)
+            let recalculate = UIAlertAction(title: "Corregir", style: .cancel) { (action) in
+                DispatchQueue.main.async {
+                    self.editButtonTapped(self)
+                }
+            }
+            let ignore = UIAlertAction(title: "Ignorar", style: .default, handler: nil)
+            alert.addAction(recalculate)
+            alert.addAction(ignore)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                print("Presenté la alerta")
+                self.present(alert, animated: true, completion: nil)
+            }
+        }
+        if ps.l_cisteína > 100 {
+            print("Se pasa")
+            let alert = UIAlertController(title: "Atención", message: "El valor de L-Cisteína excede 100 miligramos: \(-ps.l_cisteína) mg, por favor, edite los valores.", preferredStyle: .alert)
             let recalculate = UIAlertAction(title: "Corregir", style: .cancel) { (action) in
                 DispatchQueue.main.async {
                     self.editButtonTapped(self)
