@@ -134,6 +134,8 @@ class PreviewViewController: UIViewController {
                 patientValues[child.label!] =  value
             }
         }
+        patientValues["gluccaMl"] = Double(round(100 * patientValues["glucca"]! / 0.464)  / 100)
+        patientValues["magnesioMl"] = Double(round(100 * patientValues["magnesio"]! / 2.025 ) / 100)
     }
 }
 
