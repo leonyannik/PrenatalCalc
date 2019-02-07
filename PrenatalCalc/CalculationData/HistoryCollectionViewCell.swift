@@ -8,10 +8,25 @@
 
 import UIKit
 
+protocol DeleteCalculationDelegate: class {
+    func delete(index: Int)
+}
+
 class HistoryCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var weightLabel: UILabel!
     @IBOutlet weak var isSelectedView: UIView!
-
+    @IBOutlet weak var deleteButton: UIButton!
+    
+    weak var delegate: DeleteCalculationDelegate?
+    var index = 0
+    
+    @IBAction func deleteButtonTapped(_ sender: Any) {
+        delegate?.delete(index: index)
+    }
+    
+    override func prepareForReuse() {
+        index = 0
+    }
 }

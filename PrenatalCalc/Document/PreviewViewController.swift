@@ -25,6 +25,7 @@ class PreviewViewController: UIViewController {
     var patient: Patient?
     var solution: SolutionToUse?
     var note: String!
+    var weight: Double!
     let gray = UIColor(red: 0.98, green: 0.98, blue: 0.976, alpha: 1)
     var colors = [UIColor(red: 1, green: 0.974, blue: 0.522, alpha: 1), UIColor(red: 0.806, green: 0.995, blue: 1, alpha: 1), UIColor(red: 0.776, green: 1, blue: 0.904, alpha: 1), UIColor(red: 1, green: 0.884, blue: 0.702, alpha: 1), UIColor(red: 0.98, green: 0.98, blue: 0.976, alpha: 1)]
     
@@ -108,7 +109,6 @@ class PreviewViewController: UIViewController {
             height: printingView.bounds.size.height
         )
         
-//        printingView.frame = contentArea
         UIGraphicsBeginPDFContextToData(pdfData, contentArea, nil)
         UIGraphicsBeginPDFPage()
         guard let pdfContext = UIGraphicsGetCurrentContext() else { return }
@@ -234,6 +234,28 @@ extension PreviewViewController: UICollectionViewDataSource {
             let key = solutionValuesKeys[indexPath.row]
             cell.contentLabel.text = displayNames[key]!.uppercased() + ":"
             cell.valueLabel.text = String(patientValues[key]!)
+            
+            if displayNames[key]!.uppercased() == "MULTIVITAMÍNICO INTRAVENOSO" {
+                if patientValues[key]! > 5 {
+                    let value = String(patientValues[key]!) + " Máx: 5.0"
+                    let attributeString =  NSMutableAttributedString(string: value)
+                    attributeString.addAttribute(NSAttributedStringKey.strikethroughStyle, value: 1, range: NSMakeRange(0, String(patientValues[key]!).count))
+                    cell.valueLabel.attributedText = attributeString
+                }
+            }else if displayNames[key]!.uppercased() == "L-CISTEÍNA" {
+                if patientValues[key]! > 100 * weight {
+                    let value = String(patientValues[key]!) + " Máx: \(100 * weight)"
+                    let attributeString =  NSMutableAttributedString(string: value)
+                    attributeString.addAttribute(NSAttributedStringKey.strikethroughStyle, value: 1, range: NSMakeRange(0, String(patientValues[key]!).count))
+                    cell.valueLabel.attributedText = attributeString
+                }
+            }else {
+                cell.valueLabel.text = String(patientValues[key]!)
+            }
+            
+            
+            
+            
             cell.unitsLabel.text = units[key]
             cell.backgroundColor = colors[1]
             return cell

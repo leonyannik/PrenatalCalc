@@ -15,6 +15,7 @@ class NotesViewController: UIViewController {
     var textViewPlaceHolder = ""
     var noteToPass = ""
     var patient: Patient?
+    var weight: Double!
     var solution: SolutionToUse?
     
     override func viewDidLoad() {
@@ -40,7 +41,7 @@ class NotesViewController: UIViewController {
         controller.note = noteToPass
         controller.patient = patient
         controller.solution = solution
-        
+        controller.weight = weight
     }
 
     @IBAction func nextButtonTapped(_ sender: Any) {
