@@ -213,8 +213,9 @@ class PresentDataViewController: UIViewController {
                 solutionValues[child.label!] =  value
             }
         }
+        
         solutionValues["gluccaMl"] = Double(round(100 * solutionValues["glucca"]! / 0.464) / 100)
-        solutionValues["magnesioMl"] = Double(round(100 * solutionValues["magnesio"]! / 2.025 ) / 100)
+        solutionValues["magnesioMl"] = Double(round(100 * solutionValues["magnesio"]! / 0.81 ) / 100)
         noPreviousCalculationsLabel.isHidden = solutions.count > 0 ? true : false
         tableView.reloadData()
         collectionView.reloadData()
