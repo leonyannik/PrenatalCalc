@@ -97,8 +97,8 @@ class SettingsViewController: UIViewController {
 
 //MARK: Extension ImagePickerControllerDelegate
 extension SettingsViewController: UIImagePickerControllerDelegate {
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        guard let editedImage = info[UIImagePickerControllerEditedImage] as? UIImage else { print("there was no edited image");dismiss(animated: true, completion: nil);return}
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        guard let editedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage else { print("there was no edited image");dismiss(animated: true, completion: nil);return}
         self.logoImageView.image = editedImage
         saveTheImage(image: editedImage)
         self.imagePicker.dismiss(animated: true, completion: nil)
@@ -106,7 +106,7 @@ extension SettingsViewController: UIImagePickerControllerDelegate {
     
     func saveTheImage(image: UIImage) {
         let path = URL.urlInDocumentsDirectory(with: "defaultLogo")
-        try! UIImagePNGRepresentation(image)?.write(to: path)
+        try! image.pngData()?.write(to: path)
     }
 }
 

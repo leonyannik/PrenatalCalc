@@ -59,7 +59,7 @@ class PreviewViewController: UIViewController {
     @IBAction func printButtonTapped(_ sender: Any) {
         prepareToPrint()
         let printInfo = UIPrintInfo(dictionary:nil)
-        printInfo.outputType = UIPrintInfoOutputType.general
+        printInfo.outputType = UIPrintInfo.OutputType.general
         printInfo.jobName = "CálculoParenteral"
         let printController = UIPrintInteractionController.shared
         printController.printInfo = printInfo
@@ -176,7 +176,7 @@ extension PreviewViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let view = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "headerCell", for: indexPath) as! DocSubtitleCollectionReusableView
+        let view = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "headerCell", for: indexPath) as! DocSubtitleCollectionReusableView
         switch indexPath.section {
         case 0:
             view.titleLabel.text = "Datos Generales"
@@ -239,14 +239,14 @@ extension PreviewViewController: UICollectionViewDataSource {
                 if patientValues[key]! > 5 {
                     let value = String(patientValues[key]!) + " Máx: 5.0"
                     let attributeString =  NSMutableAttributedString(string: value)
-                    attributeString.addAttribute(NSAttributedStringKey.strikethroughStyle, value: 1, range: NSMakeRange(0, String(patientValues[key]!).count))
+                    attributeString.addAttribute(NSAttributedString.Key.strikethroughStyle, value: 1, range: NSMakeRange(0, String(patientValues[key]!).count))
                     cell.valueLabel.attributedText = attributeString
                 }
             }else if displayNames[key]!.uppercased() == "L-CISTEÍNA" {
                 if patientValues[key]! > 100 * weight {
                     let value = String(patientValues[key]!) + " Máx: \(100 * weight)"
                     let attributeString =  NSMutableAttributedString(string: value)
-                    attributeString.addAttribute(NSAttributedStringKey.strikethroughStyle, value: 1, range: NSMakeRange(0, String(patientValues[key]!).count))
+                    attributeString.addAttribute(NSAttributedString.Key.strikethroughStyle, value: 1, range: NSMakeRange(0, String(patientValues[key]!).count))
                     cell.valueLabel.attributedText = attributeString
                 }
             }else {
